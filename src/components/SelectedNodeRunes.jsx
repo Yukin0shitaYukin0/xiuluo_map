@@ -67,11 +67,29 @@ function RuneRing({ radius, tube, color, plane }) {
   return ring;
 }
 
+function GlowSphere({ color, scale }) {
+  const ref = useRef();
+
+  useFrame((state) => {
+    if (!ref.current) return;
+    const pulse = 1 + Math.sin(state.clock.elapsedTime * 2.5) * 0.15;
+    ref.current.scale.setScalar(pulse);
+  });
+
+  return (
+    <mesh ref={ref}>
+      <sphereGeometry args={[0.35 * scale, 32, 32]} />
+      <meshBasicMaterial color={color} transparent opacity={0.25} depthWrite={false} blending={THREE.AdditiveBlending} />
+    </mesh>
+  );
+}
+
 export default function SelectedNodeRunes({ position, color, type }) {
   const s = SCALE[type] || 0.45;
 
   return (
     <group position={[position.x, position.y, position.z]}>
+      <GlowSphere color={color} scale={s} />
       <RuneRing radius={0.7 * s} tube={0.022 * s} color={color} plane="xy" />
       <RuneRing radius={0.7 * s} tube={0.022 * s} color={color} plane="xz" />
     </group>

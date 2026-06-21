@@ -51,7 +51,7 @@ const frag = /* glsl */ `
   }
 `;
 
-export default function CoreLine({ curve, color, brightness }) {
+export default function CoreLine({ curve, color, brightness, radius = 0.004 }) {
   const meshRef = useRef();
   const curBright = useRef(brightness);
 
@@ -62,8 +62,8 @@ export default function CoreLine({ curve, color, brightness }) {
   }), [color]);
 
   const tubeGeo = useMemo(() =>
-    new THREE.TubeGeometry(curve, 32, 0.004, 6, false),
-  [curve]);
+    new THREE.TubeGeometry(curve, 32, radius, 6, false),
+  [curve, radius]);
 
   useFrame((state, delta) => {
     uniforms.uTime.value = state.clock.elapsedTime;

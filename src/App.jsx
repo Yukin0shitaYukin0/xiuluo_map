@@ -153,6 +153,7 @@ export default function App() {
         <group rotation={[Math.PI, 0, 0]}>
           {/* Layer 6: 银河主体 */}
           <GalaxyBackground />
+
           <TaiguCore position={[0, 0, 0]} onClick={handleClick} />
 
           {worldData.tianhe.map((th) => (
