@@ -1,4 +1,4 @@
-import { C, FONT } from './baodianStyles';
+import { C, FONT_BODY } from './codexStyles';
 import EntryCard from './EntryCard';
 import FactionCard from './FactionCard';
 
@@ -21,7 +21,7 @@ const S = {
   empty: {
     display: 'flex', flexDirection: 'column', alignItems: 'center',
     justifyContent: 'center', padding: '80px 0',
-    color: C.textMuted, fontSize: '14px', fontFamily: FONT,
+    color: C.textMuted, fontSize: '14px', fontFamily: FONT_BODY,
   },
   emptyIcon: {
     fontSize: '40px', marginBottom: '12px', opacity: 0.4,

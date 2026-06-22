@@ -1,4 +1,4 @@
-import { C, FONT, textGradient, statCard, TRANS } from './baodianStyles';
+import { C, FONT_BODY, textGradient, statCard, TRANS } from './codexStyles';
 
 const ICONS = {
   '人物谱': '⚔',
@@ -27,12 +27,12 @@ const S = {
     height: '100%', overflowY: 'auto',
   },
   title: {
-    fontFamily: FONT, fontSize: '26px', fontWeight: 700,
+    fontFamily: FONT_BODY, fontSize: '26px', fontWeight: 700,
     letterSpacing: '0.06em', marginBottom: '6px',
     ...textGradient(C.accent, C.accentGold),
   },
   subtitle: {
-    fontSize: '12px', color: C.textMuted, fontFamily: FONT,
+    fontSize: '12px', color: C.textMuted, fontFamily: FONT_BODY,
     letterSpacing: '0.1em', marginBottom: '36px',
   },
   statRow: {
@@ -41,7 +41,7 @@ const S = {
   },
   statNum: {
     fontSize: '24px', fontWeight: 700, color: C.textPrimary,
-    marginBottom: '4px', fontFamily: FONT,
+    marginBottom: '4px', fontFamily: FONT_BODY,
   },
   statLabel: {
     fontSize: '12px', color: C.textMuted, letterSpacing: '0.05em',
@@ -55,7 +55,7 @@ const S = {
     border: `1px solid ${C.borderSubtle}`,
     borderRadius: '8px',
     fontSize: '13px', lineHeight: '1.9', color: C.textSecondary,
-    fontFamily: FONT, textAlign: 'center',
+    fontFamily: FONT_BODY, textAlign: 'center',
     marginBottom: '24px',
   },
   quickNav: {
@@ -66,7 +66,7 @@ const S = {
     background: 'rgba(10,18,32,0.6)',
     border: `1px solid ${C.borderSubtle}`,
     borderRadius: '20px', cursor: 'pointer',
-    color: C.textSecondary, fontSize: '13px', fontFamily: FONT,
+    color: C.textSecondary, fontSize: '13px', fontFamily: FONT_BODY,
     transition: TRANS,
   },
 };

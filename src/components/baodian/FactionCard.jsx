@@ -1,4 +1,4 @@
-import { C, FONT, TRANS, tierBadge } from './baodianStyles';
+import { C, FONT_BODY, TRANS, tierBadge } from './codexStyles';
 
 const FIELD_STYLE = {
   fontSize: '12px', color: C.textMuted, marginBottom: '4px',

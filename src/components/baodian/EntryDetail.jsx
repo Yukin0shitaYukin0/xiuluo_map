@@ -1,4 +1,4 @@
-import { C, FONT, TRANS, badge } from './baodianStyles';
+import { C, FONT_BODY, TRANS, badge } from './codexStyles';
 
 const S = {
   wrapper: {
@@ -6,7 +6,7 @@ const S = {
   },
   backBtn: {
     background: 'none', border: 'none', color: C.textMuted, cursor: 'pointer',
-    fontSize: '13px', fontFamily: FONT, padding: 0, marginBottom: '16px',
+    fontSize: '13px', fontFamily: FONT_BODY, padding: 0, marginBottom: '16px',
     transition: TRANS, display: 'inline-block',
   },
   name: {
@@ -27,7 +27,7 @@ const S = {
   },
   desc: {
     fontSize: '13px', lineHeight: '1.9', color: C.textSecondary,
-    fontFamily: FONT,
+    fontFamily: FONT_BODY,
   },
   relRow: {
     display: 'flex', marginBottom: '5px', fontSize: '13px',
@@ -46,7 +46,7 @@ const S = {
     background: 'rgba(74,127,196,0.1)', borderRadius: '14px',
     color: C.accent, cursor: 'pointer',
     border: `1px solid ${C.borderSubtle}`,
-    fontFamily: FONT, transition: TRANS,
+    fontFamily: FONT_BODY, transition: TRANS,
   },
   empty: {
     padding: '32px 0', color: C.textMuted, fontSize: '13px',

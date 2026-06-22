@@ -1,4 +1,4 @@
-import { C, FONT, TRANS, badge, tierBadge } from './baodianStyles';
+import { C, FONT_BODY, TRANS, badge, tierBadge } from './codexStyles';
 import ForceGraph from './ForceGraph';
 
 const S = {
@@ -7,7 +7,7 @@ const S = {
   },
   backBtn: {
     background: 'none', border: 'none', color: C.textMuted, cursor: 'pointer',
-    fontSize: '13px', fontFamily: FONT, padding: 0, marginBottom: '16px',
+    fontSize: '13px', fontFamily: FONT_BODY, padding: 0, marginBottom: '16px',
     transition: TRANS, display: 'inline-block',
   },
   header: {
@@ -43,7 +43,7 @@ const S = {
   },
   desc: {
     fontSize: '13px', lineHeight: '1.9', color: C.textSecondary,
-    fontFamily: FONT,
+    fontFamily: FONT_BODY,
   },
   figuresRow: {
     display: 'flex', gap: '8px', flexWrap: 'wrap', marginTop: '8px',
@@ -53,7 +53,7 @@ const S = {
     background: 'rgba(212,168,85,0.1)', borderRadius: '14px',
     color: C.accentGold, cursor: 'pointer',
     border: `1px solid rgba(212,168,85,0.2)`,
-    fontFamily: FONT, transition: TRANS,
+    fontFamily: FONT_BODY, transition: TRANS,
   },
   tripleCol: {
     display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',

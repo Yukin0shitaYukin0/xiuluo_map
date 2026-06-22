@@ -1,4 +1,4 @@
-import { C, FONT, TRANS, badge } from './baodianStyles';
+import { C, FONT_BODY, TRANS, badge } from './codexStyles';
 
 const S = {
   card: {

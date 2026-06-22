@@ -158,6 +158,7 @@ function StarMapScene({ hoveredNode, setHoveredNode, selectedNodeId, setSelected
 export default function App() {
   const [mode, setMode] = useState('star'); // 'star' | 'baodian'
   const [baodianEntryId, setBaodianEntryId] = useState(null);
+  const [starFocusNodeId, setStarFocusNodeId] = useState(null);
 
   // 星图状态
   const [hoveredNode, setHoveredNode] = useState(null);
@@ -204,6 +205,15 @@ export default function App() {
     setMode('baodian');
   }, []);
 
+  const handleViewInStarMap = useCallback((nodeId) => {
+    if (nodeId) {
+      setStarFocusNodeId(nodeId);
+      setIsFocusMode(true);
+      setFocusedNodeId(nodeId);
+    }
+    setMode('star');
+  }, []);
+
   const dpr = Math.min(window.devicePixelRatio, 2);
 
   return (
@@ -224,7 +234,7 @@ export default function App() {
         {mode === 'star' && (
           <button onClick={() => { setMode('baodian'); setBaodianEntryId(null); }}
             style={M.modeBtn(false)}>
-            宝典
+            藏经阁
           </button>
         )}
         {/* 子模式（仅星图） */}
@@ -256,7 +266,7 @@ export default function App() {
           onSwitchToBaodian={handleSwitchToBaodian}
         />
       ) : (
-        <Baodian initialEntryId={baodianEntryId} />
+        <Baodian initialEntryId={baodianEntryId} onViewInStarMap={handleViewInStarMap} />
       )}
     </div>
   );

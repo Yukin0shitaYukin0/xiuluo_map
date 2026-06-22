@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
-import { C, FONT, TRANS } from './baodianStyles';
+import { C, FONT_BODY, TRANS } from './codexStyles';
 
 const S = {
   wrapper: {
@@ -21,7 +21,7 @@ const S = {
     flex: 1, border: 'none', outline: 'none',
     background: 'transparent',
     color: C.textPrimary, fontSize: '14px',
-    fontFamily: FONT,
+    fontFamily: FONT_BODY,
   },
   icon: {
     color: C.textMuted, fontSize: '15px', lineHeight: 1,

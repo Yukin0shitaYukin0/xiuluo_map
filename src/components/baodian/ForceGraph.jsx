@@ -1,5 +1,5 @@
 import { useEffect, useRef, useCallback } from 'react';
-import { C } from './baodianStyles';
+import { C } from './codexStyles';
 
 const LINK_COLORS = {
   '同盟': '#3dd6c8',
