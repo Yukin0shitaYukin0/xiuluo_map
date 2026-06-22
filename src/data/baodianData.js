@@ -137,3 +137,98 @@ export const ENTRY_TEMPLATE = {
   related: ['entry-id-2'],     // 关联词条 ID 列表
   starNodeId: null,            // 对应星图节点 ID（可选）
 };
+
+/**
+ * 势力录词条数据规范
+ *
+ * 势力词条的 relations 字段建议包含以下键：
+ *   '所属天河': '图腾天河'        — 势力所在的天河
+ *   '所属星域': '青龙星域'        — 势力所在的星域
+ *   '势力等级': '帝级宗门'        — 帝级/祖级/仙级/尊级/神级/王级
+ *   '核心人物': ['人物名', ...]   — 核心人物名称列表
+ *   '附属': ['附属势力名', ...]   — 附属势力
+ *   '敌对': ['敌对势力名', ...]   — 敌对势力
+ *   '同盟': ['同盟势力名', ...]   — 同盟势力
+ *
+ * 势力词条的 related 数组应包含其他关联词条的 ID，
+ * 其中的势力录词条会出现在关系图中。
+ */
+
+// ==================== 工具函数 ====================
+
+/** 统计各分类（仅顶层5个）的条目数量 */
+export function getStats(entries) {
+  const stats = { '人物谱': 0, '势力录': 0, '功法阁': 0, '神兵录': 0, '秘境志': 0 };
+  for (const entry of Object.values(entries)) {
+    const cat = entry.category;
+    if (cat in stats) stats[cat]++;
+  }
+  return stats;
+}
+
+/** 按分类/子分类获取词条列表，返回 { id, ...entry } 数组 */
+export function getEntriesByCategory(entries, catKey, subKey) {
+  const result = [];
+  for (const [id, entry] of Object.entries(entries)) {
+    if (subKey) {
+      if (entry.subcategory === subKey) result.push({ id, ...entry });
+    } else if (catKey) {
+      if (entry.category === catKey) result.push({ id, ...entry });
+    }
+  }
+  return result;
+}
+
+/** 提取势力关系图数据：节点 + 连线 */
+export function getFactionGraphData(entries) {
+  const factionEntries = Object.entries(entries)
+    .filter(([, e]) => e.category === '势力录')
+    .map(([id, e]) => ({ id, ...e }));
+
+  if (factionEntries.length === 0) return { nodes: [], links: [] };
+
+  const nodeMap = {};
+  for (const fe of factionEntries) {
+    nodeMap[fe.id] = {
+      id: fe.id,
+      name: fe.name,
+      color: '#4a7fc4',
+    };
+  }
+
+  const links = [];
+  const linkSet = new Set();
+
+  for (const fe of factionEntries) {
+    const rels = fe.relations || {};
+
+    const addLinks = (names, type) => {
+      if (!Array.isArray(names)) return;
+      for (const name of names) {
+        // 尝试按名称匹配节点
+        const target = factionEntries.find((f) => f.name === name);
+        if (!target) continue;
+        const key = [fe.id, target.id].sort().join('|') + '|' + type;
+        if (linkSet.has(key)) continue;
+        linkSet.add(key);
+        links.push({ source: fe.id, target: target.id, type });
+      }
+    };
+
+    addLinks(rels['同盟'], '同盟');
+    addLinks(rels['敌对'], '敌对');
+    addLinks(rels['附属'], '附属');
+
+    // related 中的势力词条 → "其他"类型
+    const related = fe.related || [];
+    for (const rid of related) {
+      if (!nodeMap[rid]) continue;
+      const key = [fe.id, rid].sort().join('|') + '|其他';
+      if (linkSet.has(key)) continue;
+      linkSet.add(key);
+      links.push({ source: fe.id, target: rid, type: '其他' });
+    }
+  }
+
+  return { nodes: Object.values(nodeMap), links };
+}
