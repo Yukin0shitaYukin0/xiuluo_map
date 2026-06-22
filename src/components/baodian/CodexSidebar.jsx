@@ -63,7 +63,7 @@ export default function CodexSidebar({
   return (
     <div style={S.sidebar}>
       <div style={S.header}>
-        <div style={S.headerTitle}>藏 经 阁</div>
+        <div style={S.headerTitle}>修 罗 谱</div>
         <span style={S.headerLine} />
       </div>
 

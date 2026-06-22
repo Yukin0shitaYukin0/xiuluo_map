@@ -19,18 +19,18 @@ import StarDetailPanel from './components/StarDetailPanel';
 
 
 const M = {
-  modeBtn: (active) => ({
-    background: active ? 'rgba(120,160,200,0.18)' : 'rgba(255,255,255,0.04)',
-    border: active ? '1px solid rgba(120,160,200,0.4)' : '1px solid rgba(255,255,255,0.1)',
-    borderRadius: '4px', padding: '6px 14px', cursor: 'pointer',
-    color: active ? '#b0d0f0' : '#555', fontSize: '13px',
+  modeBtn: {
+    background: 'rgba(255,255,255,0.03)',
+    border: '1px solid rgba(255,255,255,0.08)',
+    borderRadius: '3px', padding: '3px 8px', cursor: 'pointer',
+    color: '#666', fontSize: '11px', letterSpacing: '0.05em',
     fontFamily: '"Noto Serif SC","SimSun",serif', transition: 'all 0.3s',
-  }),
+  },
   subBtn: (active) => ({
-    background: active ? 'rgba(120,160,200,0.2)' : 'rgba(255,255,255,0.05)',
-    border: active ? '1px solid rgba(120,160,200,0.5)' : '1px solid rgba(255,255,255,0.15)',
-    borderRadius: '4px', padding: '5px 12px', cursor: 'pointer',
-    color: active ? '#a0c0e0' : '#666', fontSize: '12px',
+    background: active ? 'rgba(120,160,200,0.15)' : 'rgba(255,255,255,0.04)',
+    border: active ? '1px solid rgba(120,160,200,0.35)' : '1px solid rgba(255,255,255,0.1)',
+    borderRadius: '3px', padding: '3px 8px', cursor: 'pointer',
+    color: active ? '#a0c0e0' : '#555', fontSize: '11px',
     fontFamily: '"Noto Serif SC","SimSun",serif', transition: 'all 0.3s',
   }),
 };
@@ -221,20 +221,20 @@ export default function App() {
 
       {/* 左上角：模式切换 */}
       <div style={{
-        position: 'absolute', top: '16px', left: '16px', zIndex: 30,
-        display: 'flex', gap: '12px',
+        position: 'absolute', top: '12px', left: '12px', zIndex: 30,
+        display: 'flex', gap: '6px', alignItems: 'center',
       }}>
-        {/* 模式切换 — 只显示对方模式 */}
+        {/* 模式切换 — 箭头 + 对方模式 */}
         {mode === 'baodian' && (
           <button onClick={() => { setMode('star'); setBaodianEntryId(null); }}
-            style={M.modeBtn(false)}>
-            星图
+            style={M.modeBtn}>
+            ← 星图
           </button>
         )}
         {mode === 'star' && (
           <button onClick={() => { setMode('baodian'); setBaodianEntryId(null); }}
-            style={M.modeBtn(false)}>
-            藏经阁
+            style={M.modeBtn}>
+            → 修罗谱
           </button>
         )}
         {/* 子模式（仅星图） */}
