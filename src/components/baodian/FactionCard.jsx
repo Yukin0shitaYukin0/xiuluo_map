@@ -18,7 +18,7 @@ const S = {
     backdropFilter: 'blur(4px)',
   },
   name: {
-    fontSize: '16px', color: C.textPrimary, fontWeight: 700,
+    fontSize: '14px', color: C.textPrimary, fontWeight: 700,
     marginBottom: '10px', letterSpacing: '0.04em',
     display: 'flex', alignItems: 'center', gap: '8px',
   },

@@ -10,7 +10,7 @@ const S = {
     transition: TRANS, display: 'inline-block',
   },
   name: {
-    fontSize: '26px', color: C.textPrimary, fontWeight: 700,
+    fontSize: '20px', color: C.textPrimary, fontWeight: 700,
     marginBottom: '10px', letterSpacing: '0.04em',
   },
   metaRow: {
@@ -26,7 +26,7 @@ const S = {
     borderBottom: `1px solid ${C.borderSubtle}`,
   },
   desc: {
-    fontSize: '14px', lineHeight: '1.9', color: C.textSecondary,
+    fontSize: '13px', lineHeight: '1.9', color: C.textSecondary,
     fontFamily: FONT,
   },
   relRow: {

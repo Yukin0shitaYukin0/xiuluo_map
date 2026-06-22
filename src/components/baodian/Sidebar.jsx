@@ -11,7 +11,7 @@ const S = {
   },
   header: {
     padding: '20px 16px 14px',
-    fontSize: '20px', color: C.textPrimary, fontWeight: 700,
+    fontSize: '16px', color: C.textPrimary, fontWeight: 700,
     letterSpacing: '0.08em', textAlign: 'center',
     borderBottom: `1px solid ${C.borderSubtle}`,
     fontFamily: FONT,

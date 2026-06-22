@@ -11,7 +11,7 @@ const S = {
     backdropFilter: 'blur(4px)',
   },
   name: {
-    fontSize: '15px', color: C.textPrimary, fontWeight: 600,
+    fontSize: '14px', color: C.textPrimary, fontWeight: 600,
     marginBottom: '6px', letterSpacing: '0.03em',
   },
   meta: {

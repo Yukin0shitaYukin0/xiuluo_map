@@ -8,7 +8,7 @@ const S = {
     padding: '20px 0',
   },
   header: {
-    fontSize: '20px', color: C.textPrimary, fontWeight: 600,
+    fontSize: '16px', color: C.textPrimary, fontWeight: 600,
     marginBottom: '20px', letterSpacing: '0.04em',
     paddingBottom: '8px',
     borderBottom: `1px solid ${C.borderSubtle}`,

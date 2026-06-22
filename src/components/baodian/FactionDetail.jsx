@@ -14,18 +14,18 @@ const S = {
     display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px',
   },
   seal: {
-    width: '56px', height: '56px', borderRadius: '50%',
+    width: '44px', height: '44px', borderRadius: '50%',
     background: 'rgba(74,127,196,0.12)',
     border: `2px solid ${C.borderActive}`,
     display: 'flex', alignItems: 'center', justifyContent: 'center',
-    fontSize: '24px', color: C.accent, flexShrink: 0,
+    fontSize: '20px', color: C.accent, flexShrink: 0,
     boxShadow: '0 0 20px rgba(61,214,200,0.15)',
   },
   nameSection: {
     flex: 1,
   },
   name: {
-    fontSize: '24px', color: C.textPrimary, fontWeight: 700,
+    fontSize: '20px', color: C.textPrimary, fontWeight: 700,
     marginBottom: '4px', letterSpacing: '0.04em',
   },
   subMeta: {
@@ -42,7 +42,7 @@ const S = {
     borderBottom: `1px solid ${C.borderSubtle}`,
   },
   desc: {
-    fontSize: '14px', lineHeight: '1.9', color: C.textSecondary,
+    fontSize: '13px', lineHeight: '1.9', color: C.textSecondary,
     fontFamily: FONT,
   },
   figuresRow: {
