@@ -212,18 +212,22 @@ export default function App() {
       {/* 左上角：模式切换 */}
       <div style={{
         position: 'absolute', top: '16px', left: '16px', zIndex: 30,
-        display: 'flex', gap: '4px',
+        display: 'flex', gap: '12px',
       }}>
-        <button onClick={() => { setMode('star'); setBaodianEntryId(null); }}
-          style={M.modeBtn(mode === 'star')}>
-          星图
-        </button>
-        <button onClick={() => { setMode('baodian'); setBaodianEntryId(null); }}
-          style={M.modeBtn(mode === 'baodian')}>
-          宝典
-        </button>
+        {/* 主模式 */}
+        <div style={{ display: 'flex', gap: '4px' }}>
+          <button onClick={() => { setMode('star'); setBaodianEntryId(null); }}
+            style={M.modeBtn(mode === 'star')}>
+            星图
+          </button>
+          <button onClick={() => { setMode('baodian'); setBaodianEntryId(null); }}
+            style={M.modeBtn(mode === 'baodian')}>
+            宝典
+          </button>
+        </div>
+        {/* 子模式（仅星图） */}
         {mode === 'star' && (
-          <>
+          <div style={{ display: 'flex', gap: '4px' }}>
             <button onClick={() => { setIsFocusMode(true); setSelectedNodeId(null); }}
               style={M.subBtn(isFocusMode)}>
               聚焦
@@ -232,7 +236,7 @@ export default function App() {
               style={M.subBtn(!isFocusMode)}>
               探索
             </button>
-          </>
+          </div>
         )}
       </div>
 
