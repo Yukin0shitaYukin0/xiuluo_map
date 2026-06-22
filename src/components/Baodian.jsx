@@ -10,7 +10,7 @@ const S = {
   sidebar: {
     width: '240px', minWidth: '240px', height: '100vh',
     background: 'rgba(16,20,32,0.95)', borderRight: '1px solid rgba(120,140,180,0.12)',
-    overflowY: 'auto', padding: '0',
+    overflowY: 'auto', padding: '48px 0 0 0',
   },
   sidebarTitle: {
     padding: '20px 16px 12px',
