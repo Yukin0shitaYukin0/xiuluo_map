@@ -5,7 +5,7 @@ const S = {
     width: '220px', minWidth: '220px', height: '100vh',
     background: 'rgba(10,12,18,0.93)',
     borderRight: `1px solid ${C.borderSubtle}`,
-    overflowY: 'auto', padding: '0',
+    overflowY: 'auto', padding: '56px 0 0 0',
     position: 'relative', zIndex: 1,
   },
   header: {
