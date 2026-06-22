@@ -176,7 +176,6 @@ export default function Baodian({ initialEntryId }) {
     return (
       <div style={S.container}>
         <div style={S.sidebar}>
-          <div style={S.sidebarTitle}>修罗宝典</div>
           {CATEGORIES.map((cat) => (
             <button key={cat.key} style={S.catBtn(activeCat === cat.key)}
               onClick={() => handleCatClick(cat.key)}>
@@ -196,7 +195,6 @@ export default function Baodian({ initialEntryId }) {
     <div style={S.container}>
       {/* 左侧分类栏 */}
       <div style={S.sidebar}>
-        <div style={S.sidebarTitle}>修罗宝典</div>
         {CATEGORIES.map((cat) => (
           <div key={cat.key}>
             <button style={S.catBtn(activeCat === cat.key)}
