@@ -214,17 +214,19 @@ export default function App() {
         position: 'absolute', top: '16px', left: '16px', zIndex: 30,
         display: 'flex', gap: '12px',
       }}>
-        {/* 主模式 */}
-        <div style={{ display: 'flex', gap: '4px' }}>
+        {/* 模式切换 — 只显示对方模式 */}
+        {mode === 'baodian' && (
           <button onClick={() => { setMode('star'); setBaodianEntryId(null); }}
-            style={M.modeBtn(mode === 'star')}>
+            style={M.modeBtn(false)}>
             星图
           </button>
+        )}
+        {mode === 'star' && (
           <button onClick={() => { setMode('baodian'); setBaodianEntryId(null); }}
-            style={M.modeBtn(mode === 'baodian')}>
+            style={M.modeBtn(false)}>
             宝典
           </button>
-        </div>
+        )}
         {/* 子模式（仅星图） */}
         {mode === 'star' && (
           <div style={{ display: 'flex', gap: '4px' }}>
