@@ -84,7 +84,7 @@ export function getConnectionColor(id1, id2, nodeMap) {
   const l1 = LEVEL[n1.type] ?? 5;
   const l2 = LEVEL[n2.type] ?? 5;
 
-  if (l1 >= l2) return n1.color;
+  if (l1 > l2) return n1.color;
   return n2.color;
 }
 
