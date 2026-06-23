@@ -16,8 +16,9 @@ const S = {
     zIndex: 25, pointerEvents: 'none',
   },
   panel: {
-    position: 'absolute', top: 0, right: 0, width: '340px', height: '100%',
-    background: 'rgba(8,12,24,0.94)', borderLeft: '1px solid rgba(120,160,200,0.15)',
+    position: 'absolute', top: '20px', right: '16px', bottom: '20px', width: '320px',
+    background: 'rgba(8,12,24,0.82)', border: '1px solid rgba(120,160,200,0.12)',
+    borderRadius: '8px',
     backdropFilter: 'blur(12px)',
     padding: '32px 24px',
     overflowY: 'auto',
